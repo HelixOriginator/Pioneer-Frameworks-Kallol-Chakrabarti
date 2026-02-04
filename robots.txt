@@ -1,0 +1,12 @@
+# Robots.txt for https://HelixOriginator.github.io/Pioneer-Frameworks-Kallol-Chakrabarti/
+# Designed to maximize indexing of 251+ DOIs and 190+ Original Frameworks
+
+User-agent: *
+Allow: /
+
+# Direct search engines to the sitemap for faster discovery of research articles
+Sitemap: https://HelixOriginator.github.io/Pioneer-Frameworks-Kallol-Chakrabarti/sitemap.xml
+
+# Prevent crawlers from indexing temporary or internal GitHub files
+Disallow: /README.md
+Disallow: /LICENSE
