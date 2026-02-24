@@ -33,6 +33,7 @@
 
     <title>Kallol Chakrabarti | World-First Research Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { background-color: #080c14; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); transition: transform 0.3s ease; }
@@ -40,6 +41,181 @@
         .pioneer-tag { border-left: 4px solid #38bdf8; }
         .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .stat-card { border-top: 2px solid #334155; }
+
+        /* ── NEW: Portal Section ── */
+        .portal-section {
+            position: relative;
+            padding: 64px 0;
+        }
+        .portal-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(56,189,248,0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .portal-heading {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            letter-spacing: 0.15em;
+            background: linear-gradient(120deg, #f0c070, #e0a040, #ffd580);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+        .portal-sub {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            color: #94a3b8;
+        }
+        .divider-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #38bdf8, #818cf8, transparent);
+            margin: 0 auto;
+            width: 60%;
+            opacity: 0.4;
+        }
+
+        /* Portal Button */
+        .portal-btn {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 22px 28px;
+            border-radius: 16px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s cubic-bezier(.22,.68,0,1.2), box-shadow 0.35s ease;
+            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(10,18,36,0.85);
+            backdrop-filter: blur(14px);
+        }
+        .portal-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            border-radius: 16px;
+        }
+        .portal-btn:hover { transform: translateY(-6px) scale(1.01); }
+        .portal-btn:hover::before { opacity: 1; }
+
+        /* Individual button colour themes */
+        .btn-gold {
+            border-color: rgba(240,192,112,0.3);
+            box-shadow: 0 0 0 rgba(240,192,112,0);
+        }
+        .btn-gold::before { background: linear-gradient(135deg, rgba(240,192,112,0.08), transparent); }
+        .btn-gold:hover { box-shadow: 0 10px 40px rgba(240,192,112,0.2), 0 0 0 1px rgba(240,192,112,0.4); }
+        .btn-gold .btn-icon-wrap { background: linear-gradient(135deg, #f0c070, #c8860a); }
+        .btn-gold .btn-label { color: #fbbf24; }
+        .btn-gold .btn-badge { background: rgba(240,192,112,0.12); color: #fcd34d; border: 1px solid rgba(240,192,112,0.25); }
+        .btn-gold .btn-arrow { color: #fbbf24; }
+
+        .btn-cyan {
+            border-color: rgba(34,211,238,0.3);
+        }
+        .btn-cyan::before { background: linear-gradient(135deg, rgba(34,211,238,0.08), transparent); }
+        .btn-cyan:hover { box-shadow: 0 10px 40px rgba(34,211,238,0.18), 0 0 0 1px rgba(34,211,238,0.4); }
+        .btn-cyan .btn-icon-wrap { background: linear-gradient(135deg, #22d3ee, #0891b2); }
+        .btn-cyan .btn-label { color: #22d3ee; }
+        .btn-cyan .btn-badge { background: rgba(34,211,238,0.1); color: #67e8f9; border: 1px solid rgba(34,211,238,0.25); }
+        .btn-cyan .btn-arrow { color: #22d3ee; }
+
+        .btn-violet {
+            border-color: rgba(167,139,250,0.3);
+        }
+        .btn-violet::before { background: linear-gradient(135deg, rgba(167,139,250,0.08), transparent); }
+        .btn-violet:hover { box-shadow: 0 10px 40px rgba(167,139,250,0.18), 0 0 0 1px rgba(167,139,250,0.4); }
+        .btn-violet .btn-icon-wrap { background: linear-gradient(135deg, #a78bfa, #7c3aed); }
+        .btn-violet .btn-label { color: #a78bfa; }
+        .btn-violet .btn-badge { background: rgba(167,139,250,0.1); color: #c4b5fd; border: 1px solid rgba(167,139,250,0.25); }
+        .btn-violet .btn-arrow { color: #a78bfa; }
+
+        .btn-rose {
+            border-color: rgba(251,113,133,0.3);
+        }
+        .btn-rose::before { background: linear-gradient(135deg, rgba(251,113,133,0.08), transparent); }
+        .btn-rose:hover { box-shadow: 0 10px 40px rgba(251,113,133,0.18), 0 0 0 1px rgba(251,113,133,0.4); }
+        .btn-rose .btn-icon-wrap { background: linear-gradient(135deg, #fb7185, #be123c); }
+        .btn-rose .btn-label { color: #fb7185; }
+        .btn-rose .btn-badge { background: rgba(251,113,133,0.1); color: #fda4af; border: 1px solid rgba(251,113,133,0.25); }
+        .btn-rose .btn-arrow { color: #fb7185; }
+
+        .btn-icon-wrap {
+            flex-shrink: 0;
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px;
+        }
+        .btn-label {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: clamp(0.72rem, 1.4vw, 0.9rem);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+        .btn-desc {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            letter-spacing: 0.02em;
+        }
+        .btn-novelty {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.78rem;
+            color: #64748b;
+            margin-top: 8px;
+            line-height: 1.45;
+            font-style: italic;
+        }
+        .btn-badge {
+            display: inline-block;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 99px;
+            margin-bottom: 6px;
+        }
+        .btn-arrow {
+            flex-shrink: 0;
+            align-self: center;
+            font-size: 1.2rem;
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+        .portal-btn:hover .btn-arrow { transform: translateX(5px); }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        .shimmer-border {
+            position: relative;
+        }
+        .shimmer-border::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 17px;
+            background: linear-gradient(90deg, transparent 0%, rgba(56,189,248,0.5) 50%, transparent 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .portal-btn:hover.shimmer-border::after { opacity: 1; }
     </style>
 </head>
 <body class="p-4 md:p-10">
@@ -62,9 +238,9 @@
         </div>
     </header>
 
-    <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+    <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div class="glass p-6 rounded-2xl text-center stat-card">
-            <div class="text-4xl font-bold text-sky-400">251</div>
+            <div class="text-4xl font-bold text-sky-400">256</div>
             <div class="text-slate-400 uppercase text-xs tracking-widest mt-2">Verified Global DOIs</div>
         </div>
         <div class="glass p-6 rounded-2xl text-center stat-card">
@@ -74,6 +250,29 @@
         <div class="glass p-6 rounded-2xl text-center stat-card">
             <div class="text-4xl font-bold text-emerald-400">1st</div>
             <div class="text-slate-400 uppercase text-xs tracking-widest mt-2">Global Pioneer Status</div>
+        </div>
+    </section>
+
+    <!-- Downloads Stats Row -->
+    <section class="max-w-6xl mx-auto mb-16">
+        <div class="glass p-6 rounded-2xl" style="border-top: 2px solid #334155;">
+            <div class="text-center mb-4">
+                <span class="text-xs uppercase tracking-widest text-slate-500 font-bold">Global Research Downloads</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-700/50">
+                <div class="text-center py-4 md:py-0 md:px-6">
+                    <div class="text-3xl font-bold text-amber-400">5,000<span class="text-2xl">+</span></div>
+                    <div class="text-slate-400 uppercase text-xs tracking-widest mt-2">Total Downloads</div>
+                </div>
+                <div class="text-center py-4 md:py-0 md:px-6">
+                    <div class="text-3xl font-bold text-sky-400">4,000<span class="text-2xl">+</span></div>
+                    <div class="text-slate-400 uppercase text-xs tracking-widest mt-2">Zenodo Downloads</div>
+                </div>
+                <div class="text-center py-4 md:py-0 md:px-6">
+                    <div class="text-3xl font-bold text-violet-400">800<span class="text-2xl">+</span></div>
+                    <div class="text-slate-400 uppercase text-xs tracking-widest mt-2">SSRN Downloads</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -130,6 +329,96 @@
                 They represent a small fraction of the 190+ frameworks developed to solve real-world problems through data and heritage.
             </p>
         </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             EXTENDED PORTAL SECTION — NEW LINKS
+        ═══════════════════════════════════════════════════════════════ -->
+        <div class="portal-section mt-20">
+
+            <!-- Section heading -->
+            <div class="text-center mb-4">
+                <p class="portal-sub tracking-widest uppercase text-xs mb-3">Explore the Extended Universe</p>
+                <h2 class="portal-heading mb-4">Pioneer Research Portals</h2>
+                <p class="text-slate-500 text-sm max-w-2xl mx-auto leading-relaxed">
+                    Four landmark digital platforms—each a first-of-its-kind intellectual infrastructure—built to democratise knowledge, decode justice, and architect civilisation's next chapter.
+                </p>
+            </div>
+
+            <div class="divider-line my-8"></div>
+
+            <!-- Button Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+
+                <!-- 1 · Architecture Genome Project -->
+                <a href="https://helixoriginator.github.io/architecture-genome-project/#contribute"
+                   target="_blank"
+                   class="portal-btn btn-gold shimmer-border">
+                    <div class="btn-icon-wrap">🧬</div>
+                    <div class="flex-1 min-w-0">
+                        <span class="btn-badge">World-First</span>
+                        <div class="btn-label">Architecture Genome Project</div>
+                        <div class="btn-desc">A living, open-source DNA of human architectural thought—classifying every known structural typology into a universal genome for builders, scholars, and dreamers.</div>
+                        <div class="btn-novelty">
+                            ✦ Novelty: The first attempt to biologically map global architectural heritage into a contributable, evolving knowledge organism. Bridges genomics thinking with built-environment scholarship—an entirely new interdisciplinary frontier.
+                        </div>
+                    </div>
+                    <span class="btn-arrow">→</span>
+                </a>
+
+                <!-- 2 · Dead Market Economic Research Platform -->
+                <a href="https://helixoriginator.github.io/dead-market-economic-research-platform/"
+                   target="_blank"
+                   class="portal-btn btn-cyan shimmer-border">
+                    <div class="btn-icon-wrap">📉</div>
+                    <div class="flex-1 min-w-0">
+                        <span class="btn-badge">Pioneering</span>
+                        <div class="btn-label">Dead Market Economic Research Platform</div>
+                        <div class="btn-desc">The world's first dedicated research platform studying economic "dead zones"—markets that technically exist but have ceased to function, innovate, or serve their populations.</div>
+                        <div class="btn-novelty">
+                            ✦ Novelty: Mainstream economics ignores dying markets. This platform gives them a name, a methodology, and a cure—filling a critical blank spot in global economic science with original diagnosis frameworks.
+                        </div>
+                    </div>
+                    <span class="btn-arrow">→</span>
+                </a>
+
+                <!-- 3 · Justice Surya Kant Top 20 Landmark Judgments -->
+                <a href="https://helixoriginator.github.io/justice-surya-kant-top-20-landmark-judgments/"
+                   target="_blank"
+                   class="portal-btn btn-violet shimmer-border">
+                    <div class="btn-icon-wrap">⚖️</div>
+                    <div class="flex-1 min-w-0">
+                        <span class="btn-badge">Legal Heritage</span>
+                        <div class="btn-label">Justice Surya Kant — Top 20 Landmark Judgments</div>
+                        <div class="btn-desc">A curated, deeply annotated repository of the most consequential rulings by Justice Surya Kant—rendered accessible for citizens, students, and legal practitioners alike.</div>
+                        <div class="btn-novelty">
+                            ✦ Novelty: The first dedicated digital monument to a sitting Supreme Court judge's jurisprudence. Transforms dense legalese into a public-interest knowledge asset, democratising access to constitutional justice.
+                        </div>
+                    </div>
+                    <span class="btn-arrow">→</span>
+                </a>
+
+                <!-- 4 · Original Concept Architect -->
+                <a href="https://original-concept-architect.netlify.app/"
+                   target="_blank"
+                   class="portal-btn btn-rose shimmer-border">
+                    <div class="btn-icon-wrap">🏛️</div>
+                    <div class="flex-1 min-w-0">
+                        <span class="btn-badge">Creative Science</span>
+                        <div class="btn-label">Original Concept Architect</div>
+                        <div class="btn-desc">A meta-platform that documents, validates, and archives genuinely original conceptual inventions—distinguishing true intellectual firsts from derivative thought in the age of AI.</div>
+                        <div class="btn-novelty">
+                            ✦ Novelty: In a world awash with remixed ideas, this is the first platform dedicated solely to certifying and preserving originality itself—a guardian of intellectual sovereignty for independent thinkers worldwide.
+                        </div>
+                    </div>
+                    <span class="btn-arrow">→</span>
+                </a>
+
+            </div><!-- /grid -->
+
+            <div class="divider-line mt-12 mb-0"></div>
+
+        </div>
+        <!-- /portal-section -->
 
     </main>
 
